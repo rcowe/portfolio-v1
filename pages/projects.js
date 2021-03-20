@@ -15,15 +15,15 @@ const Heading = styled.h1`
   font-weight: 900;
 `;
 
-export default function Home() {
+export default function Projects() {
     return (
         <>
             <Head>
-                <title>Home</title>
+                <title>Projects</title>
                 <link rel='icon' href='/favicon.ico' />
             </Head>
             <Hero>
-                <Heading>HOME</Heading>
+                <Heading>PROJECTS</Heading>
             </Hero>
         </>
     );
