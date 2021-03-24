@@ -6,6 +6,10 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faLaptopCode} from "@fortawesome/free-solid-svg-icons/faLaptopCode";
 import {faUser} from "@fortawesome/free-solid-svg-icons/faUser";
+import {faTimes} from "@fortawesome/free-solid-svg-icons/faTimes";
+import {faBars} from "@fortawesome/free-solid-svg-icons/faBars";
+
+
 
 const Nav = styled.nav`
   height: 80px;
@@ -23,59 +27,38 @@ const StyledLink = styled.a`
 function NavBar() {
 
     const [click, setClick] = useState(false);
-    const [button, setButton] = useState(true);
 
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
 
-    const showButton = () => {
-        if (window.innerWidth <= 960) {
-            setButton(false);
-        } else {
-            setButton(true);
-        }
-    };
-
-    useEffect(() => {
-        showButton();
-    }, []);
-
-    window.addEventListener('resize', showButton);
 
     return (
         <Nav>
-            <div className="navbar">
                 <div className="navbar-container">
-                    <Link href='/' passHref className="navbar-logo" onClick={closeMobileMenu}>
+                    <Link href='/' passHref className="navbar-logo" >
                         <StyledLink> <FontAwesomeIcon icon={faTerminal} />DLAROSA.IO</StyledLink>
                     </Link>
-                    <div className="menu-icon" onClick={handleClick}>
-                        <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
-                    </div>
-                    <ul className={click ? "nav-menu active" : "nav-menu"}>
-                        <li className="nav-item">
-                            <Link href='/' className="nav-links" passHref onClick={closeMobileMenu}>
-                                <StyledLink>HOME</StyledLink>
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link href='/about' className="nav-links" passHref onClick={closeMobileMenu}>
-                                <StyledLink> <FontAwesomeIcon icon={faUser}/> ABOUT</StyledLink>
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link href='/projects' className="nav-links" passHref onClick={closeMobileMenu}>
-                                <StyledLink> <FontAwesomeIcon icon={faLaptopCode}/> PROJECTS</StyledLink>
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link href='/contact' className="nav-links" passHref onClick={closeMobileMenu}>
-                                <StyledLink> <FontAwesomeIcon icon={faPaperPlane} /> CONTACT</StyledLink>
-                            </Link>
-                        </li>
-                    </ul>
                 </div>
-            </div>
+                <div className="nav-menu">
+                    <Link href='/' className="nav-links" passHref>
+                        <StyledLink>HOME</StyledLink>
+                    </Link>
+
+                    <Link href='/about' className="nav-links" passHref>
+                        <StyledLink> <FontAwesomeIcon icon={faUser}/> ABOUT</StyledLink>
+                    </Link>
+
+                    <Link href='/projects' className="nav-links" passHref>
+                        <StyledLink> <FontAwesomeIcon icon={faLaptopCode}/> PROJECTS</StyledLink>
+                    </Link>
+
+                    <Link href='/contact' className="nav-links" passHref>
+                        <StyledLink> <FontAwesomeIcon icon={faPaperPlane} /> CONTACT</StyledLink>
+                    </Link>
+                    {/*<Link href='/' className="menu-icon" passHref onClick={handleClick}>*/}
+                    {/*    <i className={click ? <FontAwesomeIcon icon={faTimes} /> : <FontAwesomeIcon icon={faBars} />} />*/}
+                    {/*</Link>*/}
+                </div>
         </Nav>
     );
 };
