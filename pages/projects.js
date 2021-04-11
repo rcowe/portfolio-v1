@@ -24,6 +24,9 @@ export default function Projects() {
             </Head>
             <Hero>
                 <Heading>PROJECTS</Heading>
+                <Card>
+
+                </Card>
             </Hero>
         </>
     );

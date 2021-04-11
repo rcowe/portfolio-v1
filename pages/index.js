@@ -25,7 +25,13 @@ export default function Home() {
             </Head>
             <Hero>
                 <Heading>Hi, I'm Rosa</Heading>
+                <br />
+                <br />
+                <br />
                 <h1> I am a </h1>
+                <br />
+                <br />
+                <br />
                 <div style={{ padding: 50, textAlign: "left" }}>
                     <Typing/>
                 </div>
